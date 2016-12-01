@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * Created by Belal on 2/3/2016.
+ * Created by pblead26 on 29-Nov-16.
  */
 
 public class Friday extends Fragment {
