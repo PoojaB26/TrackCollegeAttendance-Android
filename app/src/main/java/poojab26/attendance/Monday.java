@@ -305,6 +305,7 @@ public class Monday extends Fragment {
         double Perc = Double.parseDouble(percentage);
         tv.setText("Your attendance is " + Perc );
         tv.setVisibility(View.VISIBLE);
+        tv.requestFocus();
         tv.invalidate();
 
     }

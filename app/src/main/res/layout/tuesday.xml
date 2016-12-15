@@ -67,6 +67,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -89,7 +91,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="Elective - I"
+                    android:text="ECO"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -135,6 +137,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -202,6 +206,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -224,7 +230,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="DC"
+                    android:text="DBMS"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -233,7 +239,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/dcA"
+                    android:id="@+id/dbmsA"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -246,7 +252,7 @@
                     />
 
                 <Button
-                    android:id="@+id/dcB"
+                    android:id="@+id/dbmsB"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -260,7 +266,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/dcAtten"
+                    android:id="@+id/dbmsAtten"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
@@ -268,6 +274,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -335,6 +343,8 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
