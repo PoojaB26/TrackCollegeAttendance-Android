@@ -1,14 +1,21 @@
 package poojab26.attendance;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Calendar;
 
 //Implementing the interface OnTabSelectedListener to our MainActivity
 //This interface would help in swiping views
@@ -69,6 +76,53 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                     viewData();
             }
         });
+
+
+        String day = getDay();
+        sendNotification(day);
+
+    }
+
+    private String getDay() {
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        String dayString = null;
+        switch (day) {
+            case Calendar.MONDAY:
+                dayString = "Monday";
+                break;
+            case Calendar.TUESDAY:
+                dayString = "Tuesday";
+                break;
+            case Calendar.WEDNESDAY:
+                dayString = "Wednesday";
+                break;
+            case Calendar.THURSDAY:
+                dayString = "Thursday";
+                break;
+            case Calendar.FRIDAY:
+                dayString = "Friday";
+                break;
+        }
+        return dayString;
+    }
+
+    public void sendNotification(String day) {
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        builder.setContentIntent(pendingIntent);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setContentTitle("Reminder");
+        builder.setContentText(day + " Attendance");
+        builder.setSubText("Tap to track the attendance today.");
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        // Will display the notification in the notification bar
+        notificationManager.notify(1, builder.build());
     }
 
     public void viewData(){
