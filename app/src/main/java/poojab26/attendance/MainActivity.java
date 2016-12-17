@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         //Adding onTabSelectedListener to swipe views
         tabLayout.setOnTabSelectedListener(this);
+
         btnSeeALL = (Button)findViewById(R.id.btnSeeAll);
         btnSeeALL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,9 +80,30 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
 
         String day = getDay();
+        selectPage(day);
+
         sendNotification(day);
 
+
+
     }
+
+    private void selectPage(String day){
+        int pageIndex=0;
+        if(day=="Tuesday")
+            pageIndex=1;
+        else if (day=="Wednesday")
+            pageIndex=2;
+        else if (day=="Thursday")
+            pageIndex=3;
+        else if (day=="Friday")
+            pageIndex=4;
+
+
+        tabLayout.setScrollPosition(pageIndex,0f,true);
+        viewPager.setCurrentItem(pageIndex);
+    }
+
 
     private String getDay() {
         Calendar calendar = Calendar.getInstance();
