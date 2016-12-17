@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         String day = getDay();
         selectPage(day);
 
-        sendNotification(day);
 
 
 
@@ -112,18 +111,27 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         switch (day) {
             case Calendar.MONDAY:
                 dayString = "Monday";
+                sendNotification(dayString);
                 break;
             case Calendar.TUESDAY:
                 dayString = "Tuesday";
+                sendNotification(dayString);
+
                 break;
             case Calendar.WEDNESDAY:
                 dayString = "Wednesday";
+                sendNotification(dayString);
+
                 break;
             case Calendar.THURSDAY:
                 dayString = "Thursday";
+                sendNotification(dayString);
+
                 break;
             case Calendar.FRIDAY:
                 dayString = "Friday";
+                sendNotification(dayString);
+
                 break;
         }
         return dayString;
