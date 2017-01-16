@@ -1,11 +1,15 @@
 package poojab26.attendance;
 
+import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
 
         String day = getDay();
         selectPage(day);
+        scheduleNotification(getNotification("30 second delay"), 1000);
 
 
 
@@ -154,7 +159,25 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         // Will display the notification in the notification bar
         notificationManager.notify(1, builder.build());
     }
+    private void scheduleNotification(Notification notification, int delay) {
 
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+    private Notification getNotification(String content) {
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Scheduled Notification");
+        builder.setContentText(content);
+        //builder.setSmallIcon(R.drawable.ic_launcher);
+        return builder.build();
+    }
     public void viewData(){
 
         res = db.getAllData();

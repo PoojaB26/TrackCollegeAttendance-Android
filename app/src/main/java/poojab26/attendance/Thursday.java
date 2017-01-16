@@ -15,8 +15,8 @@ import android.widget.TextView;
  */
 
 public class Thursday extends Fragment {
-    Button btnDbmsA, btnDbmsB, btnDbmsLabA, btnDbmsLabB, btnDaaA, btnDaaB, btnMathA, btnMathB, btnDcA, btnDcB, btnElectA, btnElectB;
-    TextView tvDcAttendance, tvDbmsAttendance, tvDaaAttendance, tvDbmsLabAttendance,tvElectAttendance, tvMathAttendance;
+    Button btnDbmsA, btnDbmsB, btnDbmsLabA, btnDbmsLabB, btnDaaA, btnDaaB, btnMathA, btnMathB, btnCoaA, btnCoaB, btnElectA, btnElectB;
+    TextView tvCoaAttendance, tvDbmsAttendance, tvDaaAttendance, tvDbmsLabAttendance,tvElectAttendance, tvMathAttendance;
     DatabaseHandler db;
     String DBMS ="1", COA="2", Elect="3", DC="4", MATH="5", DAA="6", DBMSLAB="7", DAALAB="8", BUSC="9";
 
@@ -32,15 +32,15 @@ public class Thursday extends Fragment {
         btnDbmsLabB = (Button) view.findViewById(R.id.dbmslabB);
         btnElectA = (Button) view.findViewById(R.id.elecA);
         btnElectB = (Button) view.findViewById(R.id.elecB);
-        btnDcA = (Button) view.findViewById(R.id.dcA);
-        btnDcB = (Button) view.findViewById(R.id.dcB);
+        btnCoaA = (Button) view.findViewById(R.id.coaA);
+        btnCoaB = (Button) view.findViewById(R.id.coaB);
         btnMathA = (Button) view.findViewById(R.id.mathA);
         btnMathB = (Button) view.findViewById(R.id.mathB);
         tvElectAttendance = (TextView)view.findViewById(R.id.electiveAtten);
         tvDaaAttendance = (TextView)view.findViewById(R.id.daaAtten);
         tvDbmsAttendance = (TextView)view.findViewById(R.id.dbmsAtten);
         tvDbmsLabAttendance = (TextView)view.findViewById(R.id.dbmslabAtten);
-        tvDcAttendance = (TextView)view.findViewById(R.id.dcAtten);
+        tvCoaAttendance = (TextView)view.findViewById(R.id.coaAtten);
         tvMathAttendance = (TextView)view.findViewById(R.id.mathAtten);
 
         return view;
@@ -52,7 +52,7 @@ public class Thursday extends Fragment {
         super.onActivityCreated(savedInstanceState);
         db = new DatabaseHandler(getActivity());
 
-        buttonsDc(DC);
+        buttonsCoa(COA);
         buttonsDbms(DBMS);
         buttonsDaa(DAA);
         buttonsDbmsLab(DBMSLAB);
@@ -212,40 +212,6 @@ public class Thursday extends Fragment {
             }
         });
     }
-    void buttonsDc(final String subid){
-        btnDcA.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                boolean isEmpty = isEmpty(subid);
-                if(isEmpty)
-                    addData(subid, 1, 0);
-                else{
-
-                    updateData(subid, 1, 0);
-                    showPercentage(subid, tvDcAttendance);
-
-                }
-                viewData();
-            }
-        });
-
-
-        btnDcB.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                boolean isEmpty = isEmpty(subid);
-                if(isEmpty==true)
-                    addData(subid, 1, 1);
-                else {
-                    updateData(subid, 1, 1);
-                    showPercentage(subid, tvDcAttendance);
-                }
-                viewData();
-            }
-        });
-    }
     void buttonsMath(final String subid){
         btnMathA.setOnClickListener(new View.OnClickListener() {
 
@@ -275,6 +241,40 @@ public class Thursday extends Fragment {
                 else {
                     updateData(subid, 1, 1);
                     showPercentage(subid, tvMathAttendance);
+                }
+                viewData();
+            }
+        });
+    }
+    void buttonsCoa(final String subid){
+        btnCoaA.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                boolean isEmpty = isEmpty(subid);
+                if(isEmpty)
+                    addData(subid, 1, 0);
+                else{
+
+                    updateData(subid, 1, 0);
+                    showPercentage(subid, tvCoaAttendance);
+
+                }
+                viewData();
+            }
+        });
+
+
+        btnCoaB.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                boolean isEmpty = isEmpty(subid);
+                if(isEmpty==true)
+                    addData(subid, 1, 1);
+                else {
+                    updateData(subid, 1, 1);
+                    showPercentage(subid, tvCoaAttendance);
                 }
                 viewData();
             }

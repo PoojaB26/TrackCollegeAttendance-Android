@@ -23,7 +23,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="PDC"
+                    android:text="COA"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="23sp"
@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/dcA"
+                    android:id="@+id/coaA"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -45,7 +45,7 @@
                     />
 
                 <Button
-                    android:id="@+id/dcB"
+                    android:id="@+id/coaB"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -59,7 +59,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/dcAtten"
+                    android:id="@+id/coaAtten"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
