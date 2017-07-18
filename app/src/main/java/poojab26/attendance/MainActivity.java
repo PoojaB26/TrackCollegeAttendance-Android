@@ -28,18 +28,30 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     private TabLayout tabLayout;
     Cursor res;
    DatabaseHandler db;
-
+    /*
+     * 1-Software Engineering - SE
+     * 2-Computer Networks - CN
+     * 3-Formal Languages and Automata Theory - FLA
+     * 4-CN Lab
+     * 5-CAT - I
+     * 6-Operating Systems - OS
+     * 7-Cyber Security - CS
+     * 8-OS labs
+     * 9-Multimedia Applications - MA
+     * 10-PECC
+     *
+     * */
     //This is our viewPager
     private ViewPager viewPager;
-    public String allSubjects=" 1-dbms\n" +
-            "        2-COA\n" +
-            "        3-elective\n" +
-            "        4-DC\n" +
-            "        5-math\n" +
-            "        6-DAA\n" +
-            "        7-dbmslab\n" +
-            "        8-DAAlab\n" +
-            "        9-busc";
+    public String allSubjects=" 1-SE\n" +
+            "        2-CN\n" +
+            "        3-FLA\n" +
+            "        4-CN Lab\n" +
+            "        5-CAT\n" +
+            "        6-OS\n" +
+            "        7-CS\n" +
+            "        8-OS Labs\n" +
+            "        9-MA";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -225,4 +237,6 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     public void onTabReselected(TabLayout.Tab tab) {
 
     }
+
+
 }

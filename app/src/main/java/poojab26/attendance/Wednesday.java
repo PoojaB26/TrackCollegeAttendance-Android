@@ -15,30 +15,44 @@ import android.widget.TextView;
  */
 
 public class Wednesday extends Fragment {
-    Button btnDbmsA, btnDbmsB, btnDaaA, btnDaaB, btnCoaA, btnCoaB, btnMathA, btnMathB, btnDcA, btnDcB;
-    TextView tvDbmsAttendance, tvDaaAttendance, tvCoaAttendance, tvMathAttendance, tvDcAttendance;
+    Button btnSE_A, btnSE_B, btnCNLab_A, btnCNLab_B, btnFLA_A, btnFLA_B, btnOS_A, btnOS_B, btnCS_A, btnCS_B, btnMA_A, btnMA_B;
+    TextView tvSEPercent, tvCNLabPercent, tvFLAPercent, tvOSPercent, tvCSPercent, tvMAPercent;
     DatabaseHandler db;
-    String DBMS ="1", COA="2", Elect="3", DC="4", MATH="5", DAA="6", DBMSLAB="7", DAALAB="8", BUSC="9";
+    String SE ="1", CN="2", FLA="3", CNLab="4", CAT="5", OS="6", CS="7", OSLab="8", MA="9", PECC="10";
 
+    /*
+    * 1-Software Engineering - SE
+    * 3-Formal Languages and Automata Theory - FLA
+    * 4-CN Lab
+    * 6-Operating Systems - OS
+    * 7-Cyber Security - CS
+    * 9-Multimedia Applications - MA
+    *
+    * */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.wednesday, container, false);
 
-        btnDaaA = (Button) view.findViewById(R.id.daaA);
-        btnDaaB = (Button) view.findViewById(R.id.daaB);
-        btnDbmsA = (Button) view.findViewById(R.id.dbmsA);
-        btnDbmsB = (Button) view.findViewById(R.id.dbmsB);
-        btnCoaA = (Button) view.findViewById(R.id.coaA);
-        btnCoaB = (Button) view.findViewById(R.id.coaB);
-        btnDcA = (Button) view.findViewById(R.id.dcA);
-        btnDcB = (Button) view.findViewById(R.id.dcB);
-        btnMathA = (Button) view.findViewById(R.id.mathA);
-        btnMathB = (Button) view.findViewById(R.id.mathB);
-        tvDaaAttendance = (TextView)view.findViewById(R.id.daaAtten);
-        tvDbmsAttendance = (TextView)view.findViewById(R.id.dbmsAtten);
-        tvCoaAttendance = (TextView)view.findViewById(R.id.coaAtten);
-        tvDcAttendance = (TextView)view.findViewById(R.id.dcAtten);
-        tvMathAttendance = (TextView)view.findViewById(R.id.mathAtten);
+        btnSE_A = (Button) view.findViewById(R.id.SE_A);
+        btnSE_B = (Button) view.findViewById(R.id.SE_B);
+        btnCNLab_A = (Button) view.findViewById(R.id.CNLab_A);
+        btnCNLab_B = (Button) view.findViewById(R.id.CNLab_B);
+        btnFLA_A = (Button) view.findViewById(R.id.FLA_A);
+        btnFLA_B = (Button) view.findViewById(R.id.FLA_B);
+        btnOS_A = (Button) view.findViewById(R.id.OS_A);
+        btnOS_B = (Button) view.findViewById(R.id.OS_B);
+        btnCS_A = (Button) view.findViewById(R.id.CS_A);
+        btnCS_B = (Button) view.findViewById(R.id.CS_B);
+        btnMA_A= (Button) view.findViewById(R.id.MA_A);
+        btnMA_B= (Button) view.findViewById(R.id.MA_B);
+
+        tvCNLabPercent = (TextView)view.findViewById(R.id.CNLab_Att);
+        tvCSPercent = (TextView)view.findViewById(R.id.CS_Att);
+        tvFLAPercent = (TextView)view.findViewById(R.id.FLA_Att);
+        tvOSPercent = (TextView)view.findViewById(R.id.OS_Att);
+        tvMAPercent = (TextView)view.findViewById(R.id.MA_Att);
+        tvSEPercent = (TextView)view.findViewById(R.id.SE_Att);
+
 
         return view;
     }
@@ -49,17 +63,19 @@ public class Wednesday extends Fragment {
         super.onActivityCreated(savedInstanceState);
         db = new DatabaseHandler(getActivity());
 
-        buttonsDbms(DBMS);
-        buttonsDaa(DAA);
-        buttonsCoa(COA);
-        buttonsDc(DC);
-        buttonsMath(MATH);
+
+        getAttendanceSE(SE);
+        getAttendanceCNLab(CNLab);
+        getAttendanceFLA(FLA);
+        getAttendanceOS(OS);
+        getAttendanceCS(CS);
+        getAttendanceMA(MA);
 
 
     }
 
-    void buttonsDaa(final String subid){
-        btnDaaA.setOnClickListener(new View.OnClickListener() {
+    void getAttendanceSE(final String subid){
+        btnSE_A.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -70,7 +86,7 @@ public class Wednesday extends Fragment {
 
                     updateData(subid, 1, 0);
 
-                    showPercentage(subid, tvDaaAttendance);
+                    showPercentage(subid, tvSEPercent);
 
                 }
                 viewData();
@@ -78,7 +94,7 @@ public class Wednesday extends Fragment {
         });
 
 
-        btnDaaB.setOnClickListener(new View.OnClickListener() {
+        btnSE_B.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -89,7 +105,7 @@ public class Wednesday extends Fragment {
 
                     updateData(subid, 1, 1);
 
-                    showPercentage(subid, tvDaaAttendance);
+                    showPercentage(subid, tvSEPercent);
 
                 }
                 viewData();
@@ -97,8 +113,8 @@ public class Wednesday extends Fragment {
         });
 
     }
-    void buttonsDbms(final String subid){
-        btnDbmsA.setOnClickListener(new View.OnClickListener() {
+    void getAttendanceCNLab(final String subid){
+        btnCNLab_A.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -109,7 +125,7 @@ public class Wednesday extends Fragment {
 
                     updateData(subid, 1, 0);
 
-                    showPercentage(subid, tvDbmsAttendance);
+                    showPercentage(subid, tvCNLabPercent);
 
                 }
                 viewData();
@@ -117,7 +133,7 @@ public class Wednesday extends Fragment {
         });
 
 
-        btnDbmsB.setOnClickListener(new View.OnClickListener() {
+        btnCNLab_B.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -128,7 +144,7 @@ public class Wednesday extends Fragment {
 
                     updateData(subid, 1, 1);
 
-                    showPercentage(subid, tvDbmsAttendance);
+                    showPercentage(subid, tvCNLabPercent);
 
                 }
                 viewData();
@@ -136,18 +152,19 @@ public class Wednesday extends Fragment {
         });
 
     }
-    void buttonsCoa(final String subid){
-        btnCoaA.setOnClickListener(new View.OnClickListener() {
+    void getAttendanceFLA(final String subid){
+        btnFLA_A.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
                 if(isEmpty)
                     addData(subid, 1, 0);
-                else{
+                else {
 
                     updateData(subid, 1, 0);
-                    showPercentage(subid, tvCoaAttendance);
+
+                    showPercentage(subid, tvFLAPercent);
 
                 }
                 viewData();
@@ -155,33 +172,38 @@ public class Wednesday extends Fragment {
         });
 
 
-        btnCoaB.setOnClickListener(new View.OnClickListener() {
+        btnFLA_B.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
-                if(isEmpty==true)
+                if(isEmpty)
                     addData(subid, 1, 1);
                 else {
+
                     updateData(subid, 1, 1);
-                    showPercentage(subid, tvCoaAttendance);
+
+                    showPercentage(subid, tvFLAPercent);
+
                 }
                 viewData();
             }
         });
+
     }
-    void buttonsDc(final String subid){
-        btnDcA.setOnClickListener(new View.OnClickListener() {
+    void getAttendanceOS(final String subid){
+        btnOS_A.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
                 if(isEmpty)
                     addData(subid, 1, 0);
-                else{
+                else {
 
                     updateData(subid, 1, 0);
-                    showPercentage(subid, tvDcAttendance);
+
+                    showPercentage(subid, tvOSPercent);
 
                 }
                 viewData();
@@ -189,33 +211,38 @@ public class Wednesday extends Fragment {
         });
 
 
-        btnDcB.setOnClickListener(new View.OnClickListener() {
+        btnOS_B.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
-                if(isEmpty==true)
+                if(isEmpty)
                     addData(subid, 1, 1);
                 else {
+
                     updateData(subid, 1, 1);
-                    showPercentage(subid, tvDcAttendance);
+
+                    showPercentage(subid, tvOSPercent);
+
                 }
                 viewData();
             }
         });
+
     }
-    void buttonsMath(final String subid){
-        btnMathA.setOnClickListener(new View.OnClickListener() {
+    void getAttendanceCS(final String subid){
+        btnCS_A.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
                 if(isEmpty)
                     addData(subid, 1, 0);
-                else{
+                else {
 
                     updateData(subid, 1, 0);
-                    showPercentage(subid, tvMathAttendance);
+
+                    showPercentage(subid, tvCSPercent);
 
                 }
                 viewData();
@@ -223,20 +250,63 @@ public class Wednesday extends Fragment {
         });
 
 
-        btnMathB.setOnClickListener(new View.OnClickListener() {
+        btnCS_B.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 boolean isEmpty = isEmpty(subid);
-                if(isEmpty==true)
+                if(isEmpty)
                     addData(subid, 1, 1);
                 else {
+
                     updateData(subid, 1, 1);
-                    showPercentage(subid, tvMathAttendance);
+
+                    showPercentage(subid, tvCSPercent);
+
                 }
                 viewData();
             }
         });
+
+    }
+    void getAttendanceMA(final String subid){
+        btnMA_A.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                boolean isEmpty = isEmpty(subid);
+                if(isEmpty)
+                    addData(subid, 1, 0);
+                else {
+
+                    updateData(subid, 1, 0);
+
+                    showPercentage(subid, tvMAPercent);
+
+                }
+                viewData();
+            }
+        });
+
+
+        btnMA_B.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                boolean isEmpty = isEmpty(subid);
+                if(isEmpty)
+                    addData(subid, 1, 1);
+                else {
+
+                    updateData(subid, 1, 1);
+
+                    showPercentage(subid, tvMAPercent);
+
+                }
+                viewData();
+            }
+        });
+
     }
 
 

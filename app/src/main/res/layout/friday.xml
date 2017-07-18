@@ -9,7 +9,7 @@
         android:orientation="vertical">
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/DAA"
+            android:id="@+id/SE"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="DAA"
+                    android:text="SE"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/daaA"
+                    android:id="@+id/SE_A"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -45,7 +45,7 @@
                     />
 
                 <Button
-                    android:id="@+id/daaB"
+                    android:id="@+id/SE_B"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -59,7 +59,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/daaAtten"
+                    android:id="@+id/SE_Att"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
@@ -67,8 +67,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -77,7 +75,7 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/dbms"
+            android:id="@+id/CN"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
@@ -91,7 +89,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="DBMS"
+                    android:text="CN"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -100,7 +98,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/dbmsA"
+                    android:id="@+id/CN_A"
                     android:layout_width="150dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
@@ -112,7 +110,7 @@
                     />
 
                 <Button
-                    android:id="@+id/dbmsB"
+                    android:id="@+id/CN_B"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -127,7 +125,7 @@
 
 
                 <TextView
-                    android:id="@+id/dbmsAtten"
+                    android:id="@+id/CN_Att"
                     android:visibility="gone"
                     android:text="your attendance is %"
                     android:gravity="center"
@@ -135,8 +133,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -148,7 +144,7 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/coa"
+            android:id="@+id/OS"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
@@ -162,7 +158,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="COA"
+                    android:text="OS"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -171,7 +167,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/coaA"
+                    android:id="@+id/OS_A"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -184,7 +180,7 @@
                     />
 
                 <Button
-                    android:id="@+id/coaB"
+                    android:id="@+id/OS_B"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -199,7 +195,7 @@
 
 
                 <TextView
-                    android:id="@+id/coaAtten"
+                    android:id="@+id/OS_Att"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
@@ -207,8 +203,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -217,7 +211,7 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/busc"
+            android:id="@+id/OSLab"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
@@ -231,7 +225,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="BC Lab"
+                    android:text="OS Lab"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -240,7 +234,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/buscA"
+                    android:id="@+id/OSLab_A"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -253,7 +247,7 @@
                     />
 
                 <Button
-                    android:id="@+id/buscB"
+                    android:id="@+id/OSLab_B"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -269,7 +263,7 @@
 
 
                 <TextView
-                    android:id="@+id/buscAtten"
+                    android:id="@+id/OSLab_Att"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
@@ -277,8 +271,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -287,7 +279,7 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/DC"
+            android:id="@+id/MA"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:layout_width="match_parent"
@@ -301,76 +293,7 @@
 
                 android:orientation="vertical">
                 <TextView
-                    android:text="PDC"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <Button
-                    android:id="@+id/dcA"
-
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:text="ATTENDED"
-                    android:textColor="#ffffff"
-                    android:background="#3388f1"
-                    />
-
-                <Button
-                    android:id="@+id/dcB"
-
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="30dp"
-                    android:text="BUNKED"
-                    android:textColor="#ffffff"
-                    android:background="#f13339"
-                    />
-
-                <TextView
-                    android:id="@+id/dcAtten"
-                    android:text="your attendance is %"
-                    android:visibility="gone"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/elective"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="20dp"
-
-                android:orientation="vertical">
-                <TextView
-                    android:text="Elective - I"
+                    android:text="MA"
                     android:gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="25sp"
@@ -379,7 +302,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/elecA"
+                    android:id="@+id/MA_A"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -392,7 +315,7 @@
                     />
 
                 <Button
-                    android:id="@+id/elecB"
+                    android:id="@+id/MA_B"
 
                     android:layout_width="150dp"
                     android:layout_height="60dp"
@@ -408,7 +331,7 @@
 
 
                 <TextView
-                    android:id="@+id/electiveAtten"
+                    android:id="@+id/MA_Att"
                     android:text="your attendance is %"
                     android:visibility="gone"
                     android:gravity="center"
@@ -416,8 +339,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
