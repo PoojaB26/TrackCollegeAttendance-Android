@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
             "        6-OS\n" +
             "        7-CS\n" +
             "        8-OS Labs\n" +
-            "        9-MA";
+            "        9-MA\n" +
+            "        10-PECC";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
